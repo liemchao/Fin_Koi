@@ -1,4 +1,4 @@
-import photo from "../../assets/photo.svg";
+import photo from "../../../public/photo.svg";
 import hoso from "../../assets/ho-so.svg";
 import cart from "../../assets/cart.svg";
 import shop from "../../assets/shop.svg";

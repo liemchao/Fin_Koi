@@ -1,4 +1,4 @@
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/login";
 // import RegisterPage from "./pages/register";
 import Dashboard from "./pages/dashboard";
@@ -21,119 +21,55 @@ import FAQ from "./pages/FAQs/faqs";
 // import StudentManagement from "./StudentManagement";
 
 function App() {
-  const router = createBrowserRouter([
-    // {
-    //     path: "",
-    //     element: <StudentManagement/>,
-    //   },
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path=""
+          element={
+            <>
+              <Header />
+              <HomePage />
+              <Footer />
+            </>
+          }
+        >
+        </Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/detail" element={<ProductDetail />} />
+        <Route path="/kygui" element={<Submission />} />
 
-    {
-      path: "",
-      element: (
-        <>
-          <Header />
-          <Outlet />
-          <Footer />
-        </>
-      ),
-      children: [
-        {
-          path: "/",
-          element: <HomePage />,
-        },
-        {
-          path: "/product",
-          element: <ProductPage />,
-        },
-        {
-          path: "/detail",
-          element: <ProductDetail />,
-        },
-        {
-          path: "/kygui",
-          element: <Submission />,
-        },
-      ],
-    },
-    {
-      path: "",
-      element: (
-        <>
-          <Header2 />
-          <Outlet />
-          <Footer />
-        </>
-      ),
-      children: [
-        {
-          path: "/v",
-          element: <HomePage />,
-        },
-        {
-          path: "/productv",
-          element: <ProductPage />,
-        },
-        {
-          path: "/detailv",
-          element: <ProductDetail />,
-        },
-        {
-          path: "paymentonline",
-          element: <PaymentPageOnline />,
-        },
-        {
-          path: "orderstatus",
-          element: <OrderStatus />,
-        },
-        {
-          path: "rating",
-          element: <Rating />,
-        },
-        {
-          path: "package",
-          element: <Packs />,
-        },
-        {
-          path: "payment",
-          element: <Payment />,
-        },
-        {
-          path: "cart",
-          element: <CartPage />,
-        },
-        {
-          path: "sub",
-          element: <Submission />,
-        },
-        {
-          path: "faqs",
-          element: <FAQ />,
-        },
-      ],
-    },
 
-    {
-      path: "login",
-      element: <LoginPage />,
-    },
+        <Route
+          path="/"
+          element={
+            <>
+              <Header2 />
+              <Footer />
+            </>
+          }
+        >
 
-    {
-      path: "register",
-      element: <RegisterPage />,
-    },
-
-    {
-      path: "home",
-      element: <HomePage />,
-    },
-
-    {
-      path: "dashboard",
-      element: <Dashboard />,
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
+        </Route>
+        <Route path="/v" element={<HomePage />} />
+        <Route path="/productv" element={<ProductPage />} />
+        <Route path="/detailv" element={<ProductDetail />} />
+        <Route path="paymentonline" element={<PaymentPageOnline />} />
+        <Route path="orderstatus" element={<OrderStatus />} />
+        <Route path="rating" element={<Rating />} />
+        <Route path="package" element={<Packs />} />
+        <Route path="payment" element={<Payment />} />
+        <Route path="cart" element={<CartPage />} />
+        <Route path="sub" element={<Submission />} />
+        <Route path="/support" element={<FAQ />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="home" element={<HomePage />} />
+        <Route path="dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

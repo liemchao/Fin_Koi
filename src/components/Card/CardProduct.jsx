@@ -21,7 +21,7 @@ const CardProduct = ({ product }) => {
   };
   return (
     <>
-      <Col key={product?.id}>
+      <Col className='mt-3 mb-2' key={product?.id}>
         <Card className='img'
           hoverable
           cover={<img alt={product?.name} src={product?.image} />}

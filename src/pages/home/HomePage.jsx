@@ -8,7 +8,7 @@ import koi3 from "../../assets/koi-dom.svg";
 import koi4 from "../../assets/koi-dom.svg";
 import koi5 from "../../assets/koi-dom.svg";
 import Slider from "../../components/home/Slider";
-import ImageRow from "../../components/home/ImageRow";
+import "./homePage.css";
 import KoiSection from "../../components/home/KoiSection";
 import { Row } from 'antd';
 import CardProduct from '../../components/Card/CardProduct';
@@ -52,7 +52,7 @@ const ListKoi = [
 ];
 
 
-const products = [ 
+const products = [
   { id: 1, name: 'Goshiki – koi #w0729n005-w0203n009', price: '2,000,000đ', breeder: "Sài gòn Koi", sex: "Male", born: "2023", size: "13.00 inch/ 34.5 cm", species: "Goshiki", image: 'https://i.imgur.com/A1hsD3s.png' },
   { id: 2, name: 'Goshiki – koi #w0729n005-w0203n009', price: '2,000,000đ', breeder: "Sài gòn Koi", sex: "Male", born: "2023", size: "13.00 inch/ 34.5 cm", species: "Goshiki", image: 'https://i.imgur.com/A1hsD3s.png' },
   { id: 3, name: 'Goshiki – koi #w0729n005-w0203n009', price: '2,000,000đ', breeder: "Sài gòn Koi", sex: "Male", born: "2023", size: "13.00 inch/ 34.5 cm", species: "Goshiki", image: 'https://i.imgur.com/A1hsD3s.png' },
@@ -67,7 +67,7 @@ const products = [
 const HomePage = () => {
   return (
     <>
-      <Slider className="slider"/>
+      <Slider className="slider" />
       <section className="relative bg-[#26445B] text-white min-h-screen flex items-center justify-center">
         {/* Background Image */}
         <div
@@ -102,21 +102,21 @@ const HomePage = () => {
           <img src={koi1} alt="Koi Fish 1" className="w-60 md:w-80 mb-10" />
           <img src={koi2} alt="Koi Fish 2" className="w-60 md:w-80" />
         </div>
-        
+
       </section>
       <section className="relative bg-[#26445B] text-white min-h-screen flex items-center justify-center product"  >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
           style={{ backgroundImage: `url(${bgImage2})` }}
-          
+
         ></div>
-        <Row gutter={16} className='productHome'>
-            {products.map((product) => (
-                <CardProduct key={product.id} product={product}/>
-              ))}
-            </Row>
+        <Row gutter={16} className='flex justify-center product  mt-1 mb-2 bg-yellow-300'>
+          {products.map((product) => (
+            <CardProduct key={product.id} product={product} />
+          ))}
+        </Row>
       </section>
-      <section className="relative bg-[#02141E] text-white py-44">
+      <section className="relative bg-yellow-300 text-white py-44">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{ backgroundImage: `url(${bgImgae3})` }}

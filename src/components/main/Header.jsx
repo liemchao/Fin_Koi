@@ -1,10 +1,13 @@
-import photo from "../../assets/photo.svg";
+import photo from "../../../public/photo.svg";
 import hoso from "../../assets/ho-so.svg";
 import cart from "../../assets/cart.svg";
 import shop from "../../assets/shop.svg";
 import support from "../../assets/phone.svg";
 import searchIcon from "../../assets/search.svg";
 import listIcon from "../../assets/list.svg";
+import admin from "../../assets/10582607-1.svg";
+
+
 import React from "react"
 
 const RouteMain = [
@@ -20,12 +23,18 @@ const RouteMain = [
   },
   {
     path: "/product",
-    name: "Hệ thống cửa hàng",
+    name: "Cá Koi",
+    icon: admin,
+  },
+
+  {
+    path: "/dashboard",
+    name: "Quản lý",
     icon: shop,
   },
   {
     path: "/cart",
-    name: "",
+    name: "Giỏ hàng",
     icon: cart,
   },
 ];
